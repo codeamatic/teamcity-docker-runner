@@ -1,0 +1,5 @@
+apply plugin: 'com.github.rodm.teamcity-common'
+
+dependencies {
+    testCompile "org.jetbrains.teamcity:tests-support:${teamcityVersion}"
+}

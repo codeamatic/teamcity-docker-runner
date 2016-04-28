@@ -1,0 +1,4 @@
+rootProject.name = 'docker-deploy-plugin'
+
+include 'docker-deploy-common'
+include 'docker-deploy-server'
