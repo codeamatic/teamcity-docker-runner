@@ -9,25 +9,8 @@
 <l:settingsGroup title="DockerBuild">
     <tr><th class="noBorder"><label for="sqsChooser">SonarQube Server: </label></th>
         <td>
-            <c:choose>
-                <c:when test="${not empty servers}">
-                    <props:selectProperty name="sonarServer" enableFilter="true" className="sqsChooser mediumField">
-                        <c:if test="${showUnknownServer}">
-                            <props:option value="" selected="true">Unknown server</props:option>
-                        </c:if>
-                        <c:if test="${showSelectServer}">
-                            <props:option value="" selected="true">Choose server</props:option>
-                        </c:if>
-                        <c:forEach items="${servers}" var="server">
-                            <props:option value="${server.id}"><c:out value="${server.name}"/>: <c:out value="${server.url}"/></props:option>
-                        </c:forEach>
-                    </props:selectProperty>
-                </c:when>
-                <c:otherwise>
-                    <span class="smallNote">No SonarQube Server registered yet for this project</span>
-                </c:otherwise>
-            </c:choose>
-            <span id="error_sonarServer" class="error"></span>
+            <props:multilineProperty name="additionalContainerParameters" linkTitle="Container Parameters" className="longField" cols="40" rows="3" expanded="true"/>
+            <span class="smallNote">Additional parameters to be used during the startup of the Docker container.  This is not applicable when containers are created through a Docker Compose file.</span>
         </td>
     </tr>
 </l:settingsGroup>
