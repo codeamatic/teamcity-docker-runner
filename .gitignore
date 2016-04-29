@@ -3,6 +3,6 @@
 *.iml
 
 .gradle
-*/build
+*/build/
 teamcity
 downloads
