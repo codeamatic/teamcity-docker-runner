@@ -3,5 +3,5 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd"
        default-autowire="constructor">
-    <bean id="codeDeployRunnerRunType" class="jetbrains.buildServer.runner.dockerDeploy.server.DockerDeployRunType"/>
+    <bean id="dockerDeployRunType" class="jetbrains.buildServer.dockerDeploy.server.DockerDeployRunType"/>
 </beans>
