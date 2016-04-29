@@ -1,0 +1,36 @@
+apply plugin: 'com.github.rodm.teamcity-agent'
+apply plugin: 'com.github.rodm.teamcity-server'
+
+def vendorName = 'codeamatic'
+
+dependencies {
+    //agent project(':docker-deploy-common')
+    //agent project(':docker-deploy-agent')
+    server project(':docker-deploy-common')
+    server project(':docker-deploy-server')
+}
+
+teamcity {
+//    agent {
+//        descriptor = project(':sonar-plugin-agent').file('teamcity-plugin.xml')
+//        files {
+//            into('sonar-qube-runner') {
+//                from project(':sonar-plugin-agent').file('sonar-qube-runner')
+//            }
+//        }
+//    }
+
+    server {
+        descriptor = file("$rootDir/teamcity-plugin.xml")
+        tokens Version: project.version, VendorName: vendorName
+
+        baseHomeDir = serversDir
+
+        environments {
+            teamcity9 {
+                version = '9.1.6'
+                homeDir = file("${baseHomeDir}/TeamCity-${version}")
+            }
+        }
+    }
+}
