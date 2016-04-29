@@ -1,4 +1,4 @@
-package jetbrains.buildServer.runner.dockerDeploy.server;
+package jetbrains.buildServer.dockerDeploy.server;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -8,37 +8,34 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import jetbrains.buildServer.runner.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.dockerDeploy.common.Constants;
 import jetbrains.buildServer.serverSide.InvalidProperty;
 import jetbrains.buildServer.serverSide.PropertiesProcessor;
 import jetbrains.buildServer.serverSide.RunType;
 import jetbrains.buildServer.serverSide.RunTypeRegistry;
-import jetbrains.buildServer.web.openapi.PluginDescriptor;
 
 public class DockerDeployRunType extends RunType {
-  private final PluginDescriptor myPluginDescriptor;
 
-  public DockerDeployRunType(final RunTypeRegistry runTypeRegistry, final PluginDescriptor pluginDescriptor) {
-    myPluginDescriptor = pluginDescriptor;
+  public DockerDeployRunType(@NotNull final RunTypeRegistry runTypeRegistry) {
     runTypeRegistry.registerRunType(this);
   }
 
   @Override
   @NotNull
   public String getType() {
-    return DockerDeployConstants.RUNNER_TYPE;
+    return Constants.RUNNER_TYPE;
   }
 
   @NotNull
   @Override
   public String getDisplayName() {
-    return DockerDeployConstants.RUNNER_DISPLAY_NAME;
+    return Constants.RUNNER_DISPLAY_NAME;
   }
 
   @NotNull
   @Override
   public String getDescription() {
-    return DockerDeployConstants.RUNNER_DESCRIPTION;
+    return Constants.RUNNER_DESCRIPTION;
   }
 
   @Nullable
@@ -61,13 +58,13 @@ public class DockerDeployRunType extends RunType {
   @Nullable
   @Override
   public String getEditRunnerParamsJspFilePath() {
-    return DockerDeployConstants.EDIT_RUN_PARAMS_PATH;
+    return Constants.EDIT_RUN_PARAMS_PATH;
   }
 
   @Nullable
   @Override
   public String getViewRunnerParamsJspFilePath() {
-    return DockerDeployConstants.VIEW_RUN_PARAMS_PATH;
+    return Constants.VIEW_RUN_PARAMS_PATH;
   }
 
   @Nullable
