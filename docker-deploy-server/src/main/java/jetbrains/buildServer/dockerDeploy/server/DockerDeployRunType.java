@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import jetbrains.buildServer.dockerDeploy.common.Constants;
+import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
 import jetbrains.buildServer.serverSide.InvalidProperty;
 import jetbrains.buildServer.serverSide.PropertiesProcessor;
 import jetbrains.buildServer.serverSide.RunType;
@@ -23,19 +23,19 @@ public class DockerDeployRunType extends RunType {
   @Override
   @NotNull
   public String getType() {
-    return Constants.RUNNER_TYPE;
+    return DockerDeployConstants.RUNNER_TYPE;
   }
 
   @NotNull
   @Override
   public String getDisplayName() {
-    return Constants.RUNNER_DISPLAY_NAME;
+    return DockerDeployConstants.RUNNER_DISPLAY_NAME;
   }
 
   @NotNull
   @Override
   public String getDescription() {
-    return Constants.RUNNER_DESCRIPTION;
+    return DockerDeployConstants.RUNNER_DESCRIPTION;
   }
 
   @Nullable
@@ -45,9 +45,9 @@ public class DockerDeployRunType extends RunType {
       public Collection<InvalidProperty> process(Map<String, String> properties) {
         List<InvalidProperty> invalidProperties = new LinkedList<InvalidProperty>();
 //
-//        final String serverId = properties.get(Constants.SONAR_SERVER_ID);
+//        final String serverId = properties.get(DockerDeployConstants.SONAR_SERVER_ID);
 //        if (serverId == null) {
-//          invalidProperties.add(new InvalidProperty(Constants.SQS_CHOOSER, "Choose a SonarQube Server to send information to"));
+//          invalidProperties.add(new InvalidProperty(DockerDeployConstants.SQS_CHOOSER, "Choose a SonarQube Server to send information to"));
 //        }
 
         return invalidProperties;
@@ -58,13 +58,13 @@ public class DockerDeployRunType extends RunType {
   @Nullable
   @Override
   public String getEditRunnerParamsJspFilePath() {
-    return Constants.EDIT_RUN_PARAMS_PATH;
+    return DockerDeployConstants.EDIT_RUN_PARAMS_PATH;
   }
 
   @Nullable
   @Override
   public String getViewRunnerParamsJspFilePath() {
-    return Constants.VIEW_RUN_PARAMS_PATH;
+    return DockerDeployConstants.VIEW_RUN_PARAMS_PATH;
   }
 
   @Nullable

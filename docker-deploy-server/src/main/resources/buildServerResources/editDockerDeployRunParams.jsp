@@ -6,7 +6,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
 
-<l:settingsGroup title="DockerBuild">
+<l:settingsGroup title="Docker Build">
     <tr><th class="noBorder"><label for="sqsChooser">SonarQube Server: </label></th>
         <td>
             <props:multilineProperty name="additionalContainerParameters" linkTitle="Container Parameters" className="longField" cols="40" rows="3" expanded="true"/>
