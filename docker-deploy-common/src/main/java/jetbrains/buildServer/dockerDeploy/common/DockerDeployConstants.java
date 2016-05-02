@@ -13,6 +13,8 @@ public interface DockerDeployConstants {
   String VIEW_RUN_PARAMS_PATH = "viewDockerDeployRunParams.jsp";
 
   String SETTINGS_BUILD_FROM = "dockerdeployer.build_from";
+  String SETTINGS_DOCKERFILE_LOCATION = "dockerdeployer.dockerfile_location";
+  String SETTINGS_DOCKER_COMPOSE_LOCATION = "dockerdeployer.docker_compose_location";
   String SETTINGS_CONTAINER_ARGUMENTS = "dockerdeployer.container_arguments";
   String SETTINGS_DOCUMENT_ROOT = "dockerdeployer.document_root";
   String SETTINGS_HOSTNAME = "dockerdeployer.hostname";
