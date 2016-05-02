@@ -1,8 +1,6 @@
 apply plugin: 'com.github.rodm.teamcity-agent'
 apply plugin: 'com.github.rodm.teamcity-server'
 
-def vendorName = 'codeamatic'
-
 dependencies {
     //agent project(':docker-deploy-common')
     //agent project(':docker-deploy-agent')
@@ -24,10 +22,12 @@ teamcity {
         descriptor = file("$rootDir/teamcity-plugin.xml")
         tokens Version: project.version, VendorName: vendorName
 
-        baseHomeDir = serversDir
+        downloadDir = project.downloadsDir
+        baseHomeDir = project.serversDir
+        baseDataDir = 'data'
 
         environments {
-            teamcity9 {
+            teamcity91 {
                 version = '9.1.6'
                 homeDir = file("${baseHomeDir}/TeamCity-${version}")
             }

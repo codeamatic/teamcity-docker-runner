@@ -14,10 +14,11 @@ group = 'jetbrains.buildServer.dockerDeploy'
 version = '1.0-SNAPSHOT'
 
 ext {
+    vendorName = 'codeamatic'
     javaVersion = hasProperty('plugin.java.version') ? property('plugin.java.version') : '1.8'
-
     teamcityVersion = project.hasProperty('teamcity.version') ? property('teamcity.version') : '9.1.6'
     serversDir = project.hasProperty('servers.dir') ? property('servers.dir') : "$rootDir/servers"
+    downloadsDir = project.hasProperty('downloads.dir') ? property('downloads.dir') : "$rootDir/downloads"
 }
 
 configure(subprojects - project(':build')) {
