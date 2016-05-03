@@ -7,6 +7,8 @@
 <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
 <jsp:useBean id="constants" class="jetbrains.buildServer.dockerDeploy.server.DockerDeployConstantsBean" />
 
+<%@include file="dockerDeployConstants.jsp" %>
+
 <l:settingsGroup title="Build Type">
     <tr>
         <th><label for="${constants.buildFrom}">Build Container From:</label></th>
@@ -81,12 +83,12 @@
         updateBFType : function() {
             var val = $('dockerdeploy_bf_opt').value;
 
-            if(val == 'docker_compose') {
+            if(val == '${BF_DOCKER_COMPOSE.buildFromPrefix}') {
                 BS.Util.show($('buildFromDockerCompose'));
                 BS.Util.hide($('buildFromDockerfile'));
                 console.log($('${constants.dockerfileLocation}'));
                 $('${constants.dockerComposeLocation}').focus();
-            } else if(val == 'dockerfile') {
+            } else if(val == '${BF_DOCKERFILE.buildFromPrefix}') {
                 BS.Util.show($('buildFromDockerfile'));
                 BS.Util.hide($('buildFromDockerCompose'));
                 console.log($('${constants.dockerfileLocation}'));
