@@ -1,10 +1,10 @@
 apply plugin: 'java'
-apply plugin: 'com.github.rodm.teamcity-server'
+apply plugin: 'com.github.rodm.teamcity-agent'
 
 dependencies {
     compile project(':docker-deploy-common')
 
-    provided "org.jetbrains.teamcity.internal:server:${teamcityVersion}"
+    provided "org.jetbrains.teamcity:tests-support:${teamcityVersion}"
 }
 
 teamcity {
