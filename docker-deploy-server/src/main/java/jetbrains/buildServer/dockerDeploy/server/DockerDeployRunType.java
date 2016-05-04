@@ -44,11 +44,6 @@ public class DockerDeployRunType extends RunType {
     return new PropertiesProcessor() {
       public Collection<InvalidProperty> process(Map<String, String> properties) {
         List<InvalidProperty> invalidProperties = new LinkedList<InvalidProperty>();
-//
-//        final String serverId = properties.get(DockerDeployConstants.SONAR_SERVER_ID);
-//        if (serverId == null) {
-//          invalidProperties.add(new InvalidProperty(DockerDeployConstants.SQS_CHOOSER, "Choose a SonarQube Server to send information to"));
-//        }
 
         return invalidProperties;
       }

@@ -2,21 +2,16 @@ apply plugin: 'com.github.rodm.teamcity-agent'
 apply plugin: 'com.github.rodm.teamcity-server'
 
 dependencies {
-    //agent project(':docker-deploy-common')
-    //agent project(':docker-deploy-agent')
+    agent project(':docker-deploy-common')
+    agent project(':docker-deploy-agent')
     server project(':docker-deploy-common')
     server project(':docker-deploy-server')
 }
 
 teamcity {
-//    agent {
-//        descriptor = project(':sonar-plugin-agent').file('teamcity-plugin.xml')
-//        files {
-//            into('sonar-qube-runner') {
-//                from project(':sonar-plugin-agent').file('sonar-qube-runner')
-//            }
-//        }
-//    }
+    agent {
+        descriptor = project(':docker-deploy-agent').file('teamcity-plugin.xml')
+    }
 
     server {
         descriptor = file("$rootDir/teamcity-plugin.xml")
