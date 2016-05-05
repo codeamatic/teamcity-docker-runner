@@ -24,6 +24,7 @@ public class DockerDeployBuildService extends BuildServiceAdapter {
   @Override
   public ProgramCommandLine makeProgramCommandLine() throws RunBuildException {
     JavaCommandLineBuilder jclBuilder = new JavaCommandLineBuilder();
+    jclBuilder.setWorkingDir(getWorkingDirectory().getAbsolutePath());
     return buildCommandLine(jclBuilder);
   }
 
