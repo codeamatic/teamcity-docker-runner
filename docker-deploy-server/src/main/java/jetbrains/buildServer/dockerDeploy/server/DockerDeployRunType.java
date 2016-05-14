@@ -3,12 +3,15 @@ package jetbrains.buildServer.dockerDeploy.server;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.requirements.Requirement;
+import jetbrains.buildServer.requirements.RequirementType;
 import jetbrains.buildServer.serverSide.InvalidProperty;
 import jetbrains.buildServer.serverSide.PropertiesProcessor;
 import jetbrains.buildServer.serverSide.RunType;
@@ -66,5 +69,14 @@ public class DockerDeployRunType extends RunType {
   @Override
   public Map<String, String> getDefaultRunnerProperties() {
     return null;
+  }
+
+  @NotNull
+  @Override
+  public List<Requirement> getRunnerSpecificRequirements(@NotNull Map<String, String> runParameters) {
+    final List<Requirement> requirements = new ArrayList<Requirement>(super.getRunnerSpecificRequirements(runParameters));
+    requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER, null, RequirementType.EXISTS));
+
+    return requirements;
   }
 }
