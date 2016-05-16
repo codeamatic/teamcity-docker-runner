@@ -21,10 +21,15 @@ public class DockerLifeCycleAdapter extends AgentLifeCycleAdapter {
 
   @Override
   public void beforeAgentConfigurationLoaded(@NotNull BuildAgent agent) {
-    String dockerVersion = docker.getDockerVersion();
+    String dockerVersion = docker.getVersion("docker");
+    String dockerComposeVersion = docker.getVersion("docker-compose");
 
     if (dockerVersion != null) {
       agent.getConfiguration().addConfigurationParameter(DockerDeployConstants.PARAMETER_DOCKER, dockerVersion);
+    }
+
+    if(dockerComposeVersion != null) {
+      agent.getConfiguration().addConfigurationParameter(DockerDeployConstants.PARAMETER_DOCKER_COMPOSE, dockerComposeVersion);
     }
   }
 }

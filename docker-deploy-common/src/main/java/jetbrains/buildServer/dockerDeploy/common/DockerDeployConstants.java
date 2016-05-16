@@ -10,6 +10,7 @@ public interface DockerDeployConstants {
   String RUNNER_DESCRIPTION = "Runner for deploying builds as Docker containers.";
 
   String PARAMETER_DOCKER = "Docker";
+  String PARAMETER_DOCKER_COMPOSE = "DockerCompose";
 
   String EDIT_RUN_PARAMS_PATH = "editDockerDeployRunParams.jsp";
   String VIEW_RUN_PARAMS_PATH = "viewDockerDeployRunParams.jsp";

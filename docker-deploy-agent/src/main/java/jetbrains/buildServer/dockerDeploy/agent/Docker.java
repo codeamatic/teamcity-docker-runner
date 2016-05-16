@@ -15,24 +15,24 @@ public class Docker {
   private static final Logger LOG = Logger.getLogger(Docker.class);
 
   /**
-   * Determines whether or not Docker is available on the current system or not.
+   * Determines whether or not Docker or Docker-Compose is available on the current system or not.
    * Heavily based on the DockerVM class programmed by Jonnyzzz for Teamcity.virtual.
    *
    * @return version of Docker installed, null if Docker doesn't exist
    */
   @Nullable
-  public String getDockerVersion() {
-    final String output = executeCommandWithShell("docker --version");
+  public String getVersion(@NotNull String appName) {
+    final String output = executeCommandWithShell(appName + " --version");
     if (output == null) {
       return null;
     }
 
     String ver = output.toLowerCase().trim();
-    ver = ver.replaceAll("\\s*docker\\s+version\\s+", "");
+    ver = ver.replaceAll("\\s*" + appName + "\\s+version\\s+", "");
     ver = ver.replaceAll(",?\\s+build\\s+", "-");
 
     if (StringUtil.isEmptyOrSpaces(ver)) {
-      LOG.warn("Failed to parse docker version: " + output);
+      LOG.warn("Failed to parse " + appName + " version: " + output);
       return null;
     }
 
