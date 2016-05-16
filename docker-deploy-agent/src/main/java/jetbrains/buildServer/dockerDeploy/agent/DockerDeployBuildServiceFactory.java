@@ -11,7 +11,6 @@ import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
 
 public class DockerDeployBuildServiceFactory implements CommandLineBuildServiceFactory {
 
-  @NotNull
   private final PluginDescriptor pluginDescriptor;
 
   public DockerDeployBuildServiceFactory(@NotNull final PluginDescriptor pluginDescriptor) {

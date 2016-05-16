@@ -13,7 +13,6 @@ import jetbrains.buildServer.agent.runner.ProgramCommandLine;
 public class DockerDeployBuildService extends BuildServiceAdapter {
   private static final Logger LOG = Logger.getLogger(DockerDeployBuildService.class.getName());
 
-  @NotNull
   private final PluginDescriptor pluginDescriptor;
 
   public DockerDeployBuildService(@NotNull final PluginDescriptor pluginDescriptor) {
