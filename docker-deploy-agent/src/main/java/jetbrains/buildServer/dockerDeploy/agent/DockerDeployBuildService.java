@@ -3,12 +3,17 @@ package jetbrains.buildServer.dockerDeploy.agent;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
 import jetbrains.buildServer.RunBuildException;
 import jetbrains.buildServer.agent.plugins.beans.PluginDescriptor;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
-import jetbrains.buildServer.agent.runner.CannotBuildCommandLineException;
-import jetbrains.buildServer.agent.runner.JavaCommandLineBuilder;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
+import jetbrains.buildServer.agent.runner.SimpleProgramCommandLine;
+import jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType;
+import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
 
 public class DockerDeployBuildService extends BuildServiceAdapter {
   private static final Logger LOG = Logger.getLogger(DockerDeployBuildService.class.getName());
@@ -22,19 +27,20 @@ public class DockerDeployBuildService extends BuildServiceAdapter {
   @NotNull
   @Override
   public ProgramCommandLine makeProgramCommandLine() throws RunBuildException {
-    JavaCommandLineBuilder jclBuilder = new JavaCommandLineBuilder();
-    jclBuilder.setWorkingDir(getWorkingDirectory().getAbsolutePath());
-    return buildCommandLine(jclBuilder);
+    List<String> params = getParams();
+
+    return new SimpleProgramCommandLine(getRunnerContext(), getWorkingDirectory().getPath(), params);
   }
 
-  @NotNull
-  public ProgramCommandLine buildCommandLine(@NotNull final JavaCommandLineBuilder builder) throws RunBuildException {
-    try {
-      LOG.debug("testings the debug logging");
-      LOG.info("testings the debug logging");
-      return builder.build();
-    } catch (CannotBuildCommandLineException ex) {
-      throw new RunBuildException(ex.getMessage());
-    }
+  private List<String> getParams() {
+    List<String> params = new LinkedList<String>();
+
+    // Determine type of deploy this will be.
+    Map<String, String> runnerParameters = getRunnerParameters();
+    String dockerDeployType = runnerParameters.get(DockerDeployConstants.SETTINGS_BUILD_FROM);
+    if(DockerDeployBuildFromType.valueOf(dockerDeployType) == DockerDeployBuildFromType.APACHE_DEFAULT) {}
+    //if(dockerDeployType)
+
+    return params;
   }
 }
