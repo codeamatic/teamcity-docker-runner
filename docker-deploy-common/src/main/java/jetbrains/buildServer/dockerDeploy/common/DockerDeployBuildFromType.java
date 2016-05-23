@@ -10,17 +10,17 @@ public enum DockerDeployBuildFromType {
   DOCKERFILE("Dockerfile", "Dockerfile"),
   DOCKER_COMPOSE("Docker Compose", "Docker Compose");
 
-  private final String buildFromPrefix;
   private final String buildFromValue;
+  private final String buildFromName;
 
-  DockerDeployBuildFromType(final String buildFromPrefix, final String buildFromValue) {
-    this.buildFromPrefix = buildFromPrefix;
+  DockerDeployBuildFromType(final String buildFromValue, final String buildFromName) {
     this.buildFromValue = buildFromValue;
+    this.buildFromName = buildFromName;
   }
 
   @NotNull
-  public String getBuildFromPrefix() {
-    return buildFromPrefix;
+  public String getBuildFromName() {
+    return buildFromName;
   }
 
   @NotNull

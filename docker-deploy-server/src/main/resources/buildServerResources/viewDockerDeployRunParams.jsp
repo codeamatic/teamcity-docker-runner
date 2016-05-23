@@ -11,12 +11,12 @@
 </div>
 
 <c:choose>
-    <c:when test="${propertiesBean.properties[constants.buildFrom] == BF_DOCKERFILE.buildFromPrefix}">
+    <c:when test="${propertiesBean.properties[constants.buildFrom] == BF_DOCKERFILE.buildFromValue}">
         <div class="parameter">
              Dockerfile path: <strong><props:displayValue name="${constants.dockerfileLocation}" emptyValue="not specified"/></strong>
         </div>
     </c:when>
-    <c:when test="${propertiesBean.properties[constants.buildFrom] == BF_DOCKER_COMPOSE.buildFromPrefix}">
+    <c:when test="${propertiesBean.properties[constants.buildFrom] == BF_DOCKER_COMPOSE.buildFromValue}">
         <div class="parameter">
              Docker Compose file path: <strong><props:displayValue name="${constants.dockerComposeLocation}" emptyValue="not specified"/></strong>
         </div>

@@ -14,6 +14,8 @@ import jetbrains.buildServer.agent.runner.ProgramCommandLine;
 import jetbrains.buildServer.agent.runner.SimpleProgramCommandLine;
 import jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType;
 import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.util.OSType;
+import jetbrains.buildServer.util.StringUtil;
 
 public class DockerDeployBuildService extends BuildServiceAdapter {
   private static final Logger LOG = Logger.getLogger(DockerDeployBuildService.class.getName());
@@ -27,20 +29,24 @@ public class DockerDeployBuildService extends BuildServiceAdapter {
   @NotNull
   @Override
   public ProgramCommandLine makeProgramCommandLine() throws RunBuildException {
-    List<String> params = getParams();
-
-    return new SimpleProgramCommandLine(getRunnerContext(), getWorkingDirectory().getPath(), params);
-  }
-
-  private List<String> getParams() {
     List<String> params = new LinkedList<String>();
+    String exeName = DockerDeployConstants.RUNNER_EXE_NAME;
 
     // Determine type of deploy this will be.
     Map<String, String> runnerParameters = getRunnerParameters();
     String dockerDeployType = runnerParameters.get(DockerDeployConstants.SETTINGS_BUILD_FROM);
-    if(DockerDeployBuildFromType.valueOf(dockerDeployType) == DockerDeployBuildFromType.APACHE_DEFAULT) {}
-    //if(dockerDeployType)
 
-    return params;
+    if(ConfigurationParamsUtil.isDockerfileBuildType(dockerDeployType)) {
+      params.add("run");
+    } else if(ConfigurationParamsUtil.isDockerComposeBuildType(dockerDeployType)) {
+      // Change executable name to docker-compose
+      exeName = DockerDeployConstants.RUNNER_COMPOSE_EXE_NAME;
+      params.add("--version");
+    } else {
+      //
+      params.add("--xyz");
+    }
+
+    return new SimpleProgramCommandLine(getRunnerContext(), exeName, params);
   }
 }

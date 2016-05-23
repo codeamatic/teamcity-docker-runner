@@ -15,8 +15,8 @@
         <td>
             <props:selectProperty name="${constants.buildFrom}" id="dockerdeploy_bf_opt" onchange="BS.DockerDeploy.updateBFType();" enableFilter="true" className="mediumField">
                 <c:forEach var="item" items="${constants.buildFromTypes}">
-                    <props:option value="${item.buildFromPrefix}"><c:out
-                            value="${item.buildFromValue}"/></props:option>
+                    <props:option value="${item.buildFromValue}"><c:out
+                            value="${item.buildFromName}"/></props:option>
                 </c:forEach>
             </props:selectProperty>
             <span class="error" id="error_${constants.buildFrom}"></span>
@@ -83,12 +83,12 @@
         updateBFType : function() {
             var val = $('dockerdeploy_bf_opt').value;
 
-            if(val == '${BF_DOCKER_COMPOSE.buildFromPrefix}') {
+            if(val == '${BF_DOCKER_COMPOSE.buildFromValue}') {
                 BS.Util.show($('buildFromDockerCompose'));
                 BS.Util.hide($('buildFromDockerfile'));
                 console.log($('${constants.dockerfileLocation}'));
                 $('${constants.dockerComposeLocation}').focus();
-            } else if(val == '${BF_DOCKERFILE.buildFromPrefix}') {
+            } else if(val == '${BF_DOCKERFILE.buildFromValue}') {
                 BS.Util.show($('buildFromDockerfile'));
                 BS.Util.hide($('buildFromDockerCompose'));
                 console.log($('${constants.dockerfileLocation}'));

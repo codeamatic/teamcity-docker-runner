@@ -5,6 +5,8 @@ package jetbrains.buildServer.dockerDeploy.common;
  */
 public interface DockerDeployConstants {
   String RUNNER_TYPE = "docker-deploy";
+  String RUNNER_EXE_NAME = "docker";
+  String RUNNER_COMPOSE_EXE_NAME = "docker-compose";
 
   String RUNNER_DISPLAY_NAME = "Docker Deploy";
   String RUNNER_DESCRIPTION = "Runner for deploying builds as Docker containers.";
