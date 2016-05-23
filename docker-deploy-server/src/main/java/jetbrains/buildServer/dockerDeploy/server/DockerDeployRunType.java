@@ -76,6 +76,8 @@ public class DockerDeployRunType extends RunType {
   public List<Requirement> getRunnerSpecificRequirements(@NotNull Map<String, String> runParameters) {
     final List<Requirement> requirements = new ArrayList<Requirement>(super.getRunnerSpecificRequirements(runParameters));
     requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER, null, RequirementType.EXISTS));
+    // TODO: Docker-compose should not be a requirement.  But lack of  Docker-compose should reflect in deploy type dropdown
+    requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER_COMPOSE, null, RequirementType.EXISTS));
 
     return requirements;
   }
