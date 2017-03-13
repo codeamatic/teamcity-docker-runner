@@ -12,7 +12,7 @@ import jetbrains.buildServer.ExecResult;
 import jetbrains.buildServer.SimpleCommandLineProcessRunner;
 
 public class Docker {
-  private static final Logger LOG = Logger.getLogger(Docker.class);
+  private static final Logger LOG = Logger.getLogger("jetbrains.buildServer.AGENT");
 
   /**
    * Determines whether or not Docker or Docker-Compose is available on the current system or not.
@@ -24,7 +24,7 @@ public class Docker {
   public String getVersion(@NotNull String appName) {
     final String output = executeCommandWithShell(appName + " --version");
     if (output == null) {
-      return "1.0.nu";
+      return null;
     }
 
     String ver = output.toLowerCase().trim();
@@ -33,10 +33,10 @@ public class Docker {
 
     if (StringUtil.isEmptyOrSpaces(ver)) {
       LOG.warn("Failed to parse " + appName + " version: " + output);
-      return "1.0.failed";
+      return null;
     }
 
-    return "Xy." + ver;
+    return ver;
   }
 
   /**
