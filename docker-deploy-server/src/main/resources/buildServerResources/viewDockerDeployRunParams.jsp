@@ -1,8 +1,7 @@
-<%@ page import="jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType" %>
 <%@ taglib prefix="props" tagdir="/WEB-INF/tags/props" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
-<jsp:useBean id="constants" class="jetbrains.buildServer.dockerDeploy.server.DockerDeployConstantsBean" />
+<jsp:useBean id="constants" class="jetbrains.buildServer.runner.dockerdeploy.server.DockerDeployConstantsBean" />
 
 <%@include file="dockerDeployConstants.jsp" %>
 

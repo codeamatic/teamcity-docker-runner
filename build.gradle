@@ -6,22 +6,20 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.github.rodm:gradle-teamcity-plugin:0.8.4"
+        classpath "com.github.rodm:gradle-teamcity-plugin:0.11"
     }
 }
 
-group = 'jetbrains.buildServer.dockerDeploy'
+group = 'jetbrains.buildServer.runner.dockerdeploy'
 version = '1.0-SNAPSHOT'
 
-ext {
-    vendorName = 'codeamatic'
-    javaVersion = hasProperty('plugin.java.version') ? property('plugin.java.version') : '1.8'
-    teamcityVersion = project.hasProperty('teamcity.version') ? property('teamcity.version') : '9.1.6'
-    serversDir = project.hasProperty('servers.dir') ? property('servers.dir') : "$rootDir/servers"
-    downloadsDir = project.hasProperty('downloads.dir') ? property('downloads.dir') : "$rootDir/downloads"
-}
+ext.vendorName = 'codeamatic'
+ext.javaVersion = hasProperty('plugin.java.version') ? property('plugin.java.version') : '1.8'
+ext.teamcityVersion = project.hasProperty('teamcity.version') ? property('teamcity.version') : '9.1.6'
+ext.serversDir = project.hasProperty('servers.dir') ? property('servers.dir') : "$rootDir/servers"
+ext.downloadsDir = project.hasProperty('downloads.dir') ? property('downloads.dir') : "$rootDir/downloads"
 
-configure(subprojects - project(':build')) {
+configure(subprojects) {
     apply plugin: 'java'
 
     sourceCompatibility = javaVersion

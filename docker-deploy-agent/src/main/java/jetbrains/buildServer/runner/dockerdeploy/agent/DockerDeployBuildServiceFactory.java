@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.agent;
+package jetbrains.buildServer.runner.dockerdeploy.agent;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -7,7 +7,7 @@ import jetbrains.buildServer.agent.BuildAgentConfiguration;
 import jetbrains.buildServer.agent.plugins.beans.PluginDescriptor;
 import jetbrains.buildServer.agent.runner.CommandLineBuildService;
 import jetbrains.buildServer.agent.runner.CommandLineBuildServiceFactory;
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployConstants;
 
 public class DockerDeployBuildServiceFactory implements CommandLineBuildServiceFactory {
 

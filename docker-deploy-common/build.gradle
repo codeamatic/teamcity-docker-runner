@@ -1,14 +1,5 @@
-apply plugin: 'java'
+apply plugin: 'com.github.rodm.teamcity-common'
 
-repositories {
-    mavenCentral()
-    maven {
-        url 'http://repository.jetbrains.com/all'
-    }
-}
-
-dependencies {
-    compile "org.jetbrains.teamcity.idea:annotations:132.719"
-
-    testCompile "junit:junit:3.8.1"
+teamcity {
+    version = teamcityVersion
 }

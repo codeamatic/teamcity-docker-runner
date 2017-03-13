@@ -1,4 +1,4 @@
-<%@ page import="jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType" %>
+<%@ page import="jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployBuildFromType" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="BF_APACHE_DEF" value="<%=DockerDeployBuildFromType.APACHE_DEFAULT%>"/>

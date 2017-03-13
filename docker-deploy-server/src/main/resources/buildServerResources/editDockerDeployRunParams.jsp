@@ -5,7 +5,7 @@
 <%@ taglib prefix="l" tagdir="/WEB-INF/tags/layout" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
-<jsp:useBean id="constants" class="jetbrains.buildServer.dockerDeploy.server.DockerDeployConstantsBean" />
+<jsp:useBean id="constants" class="jetbrains.buildServer.runner.dockerdeploy.server.DockerDeployConstantsBean" />
 
 <%@include file="dockerDeployConstants.jsp" %>
 
@@ -61,7 +61,7 @@
         <td>
             <props:textProperty name="${constants.hostname}" className="longField"/>
             <span class="error" id="error_${constants.hostname}"></span>
-            <span class="smallNote">Example:  example.dev.rfisite.com</span>
+            <span class="smallNote">Example:  example.dev.xyz.com</span>
         </td>
     </tr>
 

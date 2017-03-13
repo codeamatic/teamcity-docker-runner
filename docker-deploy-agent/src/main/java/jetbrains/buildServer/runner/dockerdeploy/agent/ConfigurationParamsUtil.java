@@ -1,10 +1,10 @@
-package jetbrains.buildServer.dockerDeploy.agent;
+package jetbrains.buildServer.runner.dockerdeploy.agent;
 
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployBuildFromType;
 
 public class ConfigurationParamsUtil {
 
-   static boolean isDefaultBuildType(final String deployType) {
+  static boolean isDefaultBuildType(final String deployType) {
     return deployType.equals(DockerDeployBuildFromType.APACHE_DEFAULT.getBuildFromValue());
   }
 

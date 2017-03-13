@@ -1,10 +1,10 @@
-package jetbrains.buildServer.dockerDeploy.agent;
+package jetbrains.buildServer.runner.dockerdeploy.agent;
 
 import org.jetbrains.annotations.NotNull;
 
 import jetbrains.buildServer.agent.AgentLifeCycleAdapter;
 import jetbrains.buildServer.agent.BuildAgent;
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployConstants;
 import jetbrains.buildServer.util.EventDispatcher;
 
 /**

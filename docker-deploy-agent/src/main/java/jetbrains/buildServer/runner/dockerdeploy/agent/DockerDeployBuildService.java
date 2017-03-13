@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.agent;
+package jetbrains.buildServer.runner.dockerdeploy.agent;
 
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -12,10 +12,7 @@ import jetbrains.buildServer.agent.plugins.beans.PluginDescriptor;
 import jetbrains.buildServer.agent.runner.BuildServiceAdapter;
 import jetbrains.buildServer.agent.runner.ProgramCommandLine;
 import jetbrains.buildServer.agent.runner.SimpleProgramCommandLine;
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType;
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
-import jetbrains.buildServer.util.OSType;
-import jetbrains.buildServer.util.StringUtil;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployConstants;
 
 public class DockerDeployBuildService extends BuildServiceAdapter {
   private static final Logger LOG = Logger.getLogger(DockerDeployBuildService.class.getName());

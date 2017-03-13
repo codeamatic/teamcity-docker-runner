@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.server;
+package jetbrains.buildServer.runner.dockerdeploy.server;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployConstants;
 import jetbrains.buildServer.requirements.Requirement;
 import jetbrains.buildServer.requirements.RequirementType;
 import jetbrains.buildServer.serverSide.InvalidProperty;

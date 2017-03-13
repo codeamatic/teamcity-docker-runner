@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.common;
+package jetbrains.buildServer.runner.dockerdeploy.common;
 
 import org.jetbrains.annotations.NotNull;
 

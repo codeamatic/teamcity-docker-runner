@@ -1,4 +1,3 @@
-apply plugin: 'java'
 apply plugin: 'com.github.rodm.teamcity-server'
 
 dependencies {
@@ -8,5 +7,16 @@ dependencies {
 }
 
 teamcity {
-    version = teamcityVersion
+    server {
+        descriptor = file("$rootDir/teamcity-plugin.xml")
+        tokens Version: project.version, VendorName: vendorName
+    }
+
+    environments {
+        teamcity91 {
+            homeDir = file(serversDir)
+            dataDir = file('data')
+            version = teamcityVersion;
+        }
+    }
 }

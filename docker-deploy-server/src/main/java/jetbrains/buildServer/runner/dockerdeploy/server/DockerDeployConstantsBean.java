@@ -1,9 +1,9 @@
-package jetbrains.buildServer.dockerDeploy.server;
+package jetbrains.buildServer.runner.dockerdeploy.server;
 
 import org.jetbrains.annotations.NotNull;
 
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployBuildFromType;
-import jetbrains.buildServer.dockerDeploy.common.DockerDeployConstants;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployBuildFromType;
+import jetbrains.buildServer.runner.dockerdeploy.common.DockerDeployConstants;
 
 public class DockerDeployConstantsBean {
 

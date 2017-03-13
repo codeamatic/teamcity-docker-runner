@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.agent;
+package jetbrains.buildServer.runner.dockerdeploy.agent;
 
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.openapi.util.SystemInfo;
@@ -24,7 +24,7 @@ public class Docker {
   public String getVersion(@NotNull String appName) {
     final String output = executeCommandWithShell(appName + " --version");
     if (output == null) {
-      return null;
+      return "1.0.nu";
     }
 
     String ver = output.toLowerCase().trim();
@@ -33,10 +33,10 @@ public class Docker {
 
     if (StringUtil.isEmptyOrSpaces(ver)) {
       LOG.warn("Failed to parse " + appName + " version: " + output);
-      return null;
+      return "1.0.failed";
     }
 
-    return ver;
+    return "Xy." + ver;
   }
 
   /**

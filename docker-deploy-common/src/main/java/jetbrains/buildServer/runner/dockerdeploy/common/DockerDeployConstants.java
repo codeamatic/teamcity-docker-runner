@@ -1,4 +1,4 @@
-package jetbrains.buildServer.dockerDeploy.common;
+package jetbrains.buildServer.runner.dockerdeploy.common;
 
 /**
  * Interface specifying a set of constants used across the plugin.
