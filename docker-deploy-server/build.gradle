@@ -7,9 +7,11 @@ dependencies {
 }
 
 teamcity {
+    version = teamcityVersion
+
     server {
         descriptor = file("$rootDir/teamcity-plugin.xml")
-        tokens Version: project.version, VendorName: vendorName
+        tokens = [Version: project.version]
     }
 
     environments {

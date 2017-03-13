@@ -7,9 +7,9 @@ dependencies {
 }
 
 teamcity {
+    version = teamcityVersion;
+
     agent {
         descriptor = project(':docker-deploy-agent').file('teamcity-plugin.xml')
     }
-
-    version = teamcityVersion;
 }
