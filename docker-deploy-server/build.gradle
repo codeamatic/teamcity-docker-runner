@@ -2,23 +2,8 @@ apply plugin: 'com.github.rodm.teamcity-server'
 
 dependencies {
     compile project(':docker-deploy-common')
-
-    provided "org.jetbrains.teamcity.internal:server:${teamcityVersion}"
 }
 
 teamcity {
     version = teamcityVersion
-
-    server {
-        descriptor = file("$rootDir/teamcity-plugin.xml")
-        tokens = [Version: project.version]
-    }
-
-    environments {
-        teamcity91 {
-            homeDir = file(serversDir)
-            dataDir = file('data')
-            version = teamcityVersion;
-        }
-    }
 }

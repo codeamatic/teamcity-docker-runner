@@ -1,0 +1,24 @@
+apply plugin: 'com.github.rodm.teamcity-server'
+
+dependencies {
+    agent project(path: ':plugin-agent', configuration: 'plugin')
+    server project(':docker-deploy-common')
+    server project(':docker-deploy-server')
+}
+
+teamcity {
+    version = teamcityVersion
+
+    server {
+        descriptor = file("$rootDir/teamcity-plugin.xml")
+        tokens = [Version: project.version]
+    }
+
+    environments {
+        teamcity91 {
+            homeDir = file(serversDir)
+            dataDir = file('data')
+            version = teamcityVersion;
+        }
+    }
+}

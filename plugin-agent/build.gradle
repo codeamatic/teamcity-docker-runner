@@ -1,0 +1,18 @@
+apply plugin: 'com.github.rodm.teamcity-agent'
+
+dependencies {
+    agent project(':docker-deploy-agent')
+    agent project(':docker-deploy-common')
+}
+
+teamcity {
+    version = teamcityVersion
+
+    agent {
+        descriptor {
+            pluginDeployment {
+                useSeparateClassloader = true
+            }
+        }
+    }
+}

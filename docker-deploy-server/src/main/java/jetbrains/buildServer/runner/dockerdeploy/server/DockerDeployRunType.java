@@ -47,7 +47,7 @@ public class DockerDeployRunType extends RunType {
     return new PropertiesProcessor() {
       public Collection<InvalidProperty> process(Map<String, String> properties) {
         List<InvalidProperty> invalidProperties = new LinkedList<InvalidProperty>();
-
+        // TODO: Validate any properties for the agent
         return invalidProperties;
       }
     };
@@ -77,7 +77,7 @@ public class DockerDeployRunType extends RunType {
     final List<Requirement> requirements = new ArrayList<Requirement>(super.getRunnerSpecificRequirements(runParameters));
     requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER, null, RequirementType.EXISTS));
     // TODO: Docker-compose should not be a requirement.  But lack of  Docker-compose should reflect in deploy type dropdown
-    requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER_COMPOSE, null, RequirementType.EXISTS));
+    //requirements.add(new Requirement(DockerDeployConstants.PARAMETER_DOCKER_COMPOSE, null, RequirementType.EXISTS));
 
     return requirements;
   }
