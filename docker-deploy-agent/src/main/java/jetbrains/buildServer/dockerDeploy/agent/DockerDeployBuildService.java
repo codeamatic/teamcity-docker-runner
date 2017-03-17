@@ -29,6 +29,7 @@ public class DockerDeployBuildService extends BuildServiceAdapter {
   @NotNull
   @Override
   public ProgramCommandLine makeProgramCommandLine() throws RunBuildException {
+
     List<String> params = new LinkedList<String>();
     String exeName = DockerDeployConstants.RUNNER_EXE_NAME;
 

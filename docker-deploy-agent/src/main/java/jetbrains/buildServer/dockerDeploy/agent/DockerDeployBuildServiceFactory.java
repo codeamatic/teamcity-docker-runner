@@ -24,16 +24,6 @@ public class DockerDeployBuildServiceFactory implements CommandLineBuildServiceF
 
   @NotNull
   public AgentBuildRunnerInfo getBuildRunnerInfo() {
-    return new AgentBuildRunnerInfo() {
-
-      @NotNull
-      public String getType() {
-        return DockerDeployConstants.RUNNER_TYPE;
-      }
-
-      public boolean canRun(@NotNull BuildAgentConfiguration agentConfiguration) {
-        return true;
-      }
-    };
+    return new DockerDeployBuildRunnerInfo();
   }
 }

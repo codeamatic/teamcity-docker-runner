@@ -12,7 +12,7 @@ import jetbrains.buildServer.ExecResult;
 import jetbrains.buildServer.SimpleCommandLineProcessRunner;
 
 public class Docker {
-  private static final Logger LOG = Logger.getLogger(Docker.class);
+  private static final Logger LOG = Logger.getLogger(Docker.class.getName());
 
   /**
    * Determines whether or not Docker or Docker-Compose is available on the current system or not.

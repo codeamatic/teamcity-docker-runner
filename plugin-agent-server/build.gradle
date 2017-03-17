@@ -15,17 +15,14 @@ teamcity {
 
     server {
         descriptor = file("$rootDir/teamcity-plugin.xml")
-        tokens Version: project.version, VendorName: vendorName
+        tokens = [Version: project.version, VendorName: vendorName]
+    }
 
-        downloadDir = project.downloadsDir
-        baseHomeDir = project.serversDir
-        baseDataDir = 'data'
-
-        environments {
-            teamcity91 {
-                version = '9.1.6'
-                homeDir = file("${baseHomeDir}/TeamCity-${version}")
-            }
+    environments {
+        teamcity91 {
+            version = teamcityVersion;
+            homeDir = file("${serversDir}/TeamCity-${version}")
+            dataDir = file('data')
         }
     }
 }
