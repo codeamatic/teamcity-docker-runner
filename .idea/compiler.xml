@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="docker-deploy-agent_main" target="1.8" />
+      <module name="docker-deploy-agent_test" target="1.8" />
+      <module name="docker-deploy-common_main" target="1.8" />
+      <module name="docker-deploy-common_test" target="1.8" />
+      <module name="docker-deploy-server_main" target="1.8" />
+      <module name="docker-deploy-server_test" target="1.8" />
+      <module name="plugin-agent_main" target="1.8" />
+      <module name="plugin-agent_test" target="1.8" />
+      <module name="plugin-server_main" target="1.8" />
+      <module name="plugin-server_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

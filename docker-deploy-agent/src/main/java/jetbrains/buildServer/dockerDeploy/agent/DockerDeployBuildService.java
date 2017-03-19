@@ -37,7 +37,9 @@ public class DockerDeployBuildService extends BuildServiceAdapter {
     Map<String, String> runnerParameters = getRunnerParameters();
     String dockerDeployType = runnerParameters.get(DockerDeployConstants.SETTINGS_BUILD_FROM);
 
+    // Deploying from custom Dockerfile associated with project
     if(ConfigurationParamsUtil.isDockerfileBuildType(dockerDeployType)) {
+      String location = runnerParameters.get(DockerDeployConstants.SETTINGS_DOCKERFILE_LOCATION);
       params.add("run");
     } else if(ConfigurationParamsUtil.isDockerComposeBuildType(dockerDeployType)) {
       // Change executable name to docker-compose
