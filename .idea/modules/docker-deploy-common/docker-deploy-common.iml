@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id=":docker-deploy-common" external.linked.project.path="$MODULE_DIR$/../../../docker-deploy-common" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="docker-deploy-plugin" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../../docker-deploy-common/build/classes/main" />
+    <output-test url="file://$MODULE_DIR$/../../../docker-deploy-common/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../docker-deploy-common">
+      <sourceFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../docker-deploy-common/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:3.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.teamcity.idea:annotations:132.719" level="project" />
   </component>
 </module>

@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent.iml" group="docker-deploy-agent" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent_main.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent_main.iml" group="docker-deploy-agent" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent_test.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent_test.iml" group="docker-deploy-agent" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common.iml" group="docker-deploy-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common_main.iml" group="docker-deploy-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common_test.iml" group="docker-deploy-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-agent/docker-deploy-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-common/docker-deploy-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server.iml" group="docker-deploy-server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server_main.iml" group="docker-deploy-server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server_test.iml" group="docker-deploy-server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin-agent-server/plugin-agent-server.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin-agent-server/plugin-agent-server.iml" group="plugin-agent-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server.iml" filepath="$PROJECT_DIR$/.idea/modules/docker-deploy-server/docker-deploy-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin-agent-server/plugin-agent-server.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin-agent-server/plugin-agent-server.iml" />
     </modules>
   </component>
 </project>

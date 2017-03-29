@@ -23,6 +23,11 @@ teamcity {
             version = teamcityVersion;
             homeDir = file("${serversDir}/TeamCity-${version}")
             dataDir = file('data')
+            // Server Options including debug mode
+//            serverOptions = '-Dteamcity.development.mode=true'
+//            serverOptions = '-Dteamcity.development.shadowCopyClasses=true'
+            serverOptions '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'
+            agentOptions '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006'
         }
     }
 }
